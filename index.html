@@ -3,12 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Youssef</title>
+    <meta
+      name="description"
+      content="Portfolio de Youssef Ait Elfadil, développeur web junior, créateur de jeux en Lua et mini-graphiste. Découvrez mes compétences, projets et inspirations."
+    />
+    <meta
+      name="keywords"
+      content="Développeur web, créateur de jeux, portfolio, Youssef Ait Elfadil, HTML, CSS, JavaScript, Lua, graphisme, Roblox, SCP"
+    />
+    <meta name="author" content="Youssef Ait Elfadil" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Portfolio Youssef Ait Elfadil" />
+    <meta
+      property="og:description"
+      content="Portfolio personnel de Youssef Ait Elfadil, développeur web et créateur de jeux. Découvrez mes projets et compétences."
+    />
+    <meta
+      property="og:image"
+      content="http://127.0.0.1:5500/Ait%20ElFadil%20Youssef%20Logo.jpg"
+    />
+    <meta property="og:url" content="mineropaul.github.io/Portfolio" />
+    <meta property="og:type" content="website" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="Ait ElFadil Youssef Logo.jpg" type="image/x-icon" />
+
+    <!-- Polices Google -->
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Inter:wght@300;500;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Lien vers les CSS externes -->
     <link rel="stylesheet" href="styles.css" />
+
+    <title>Portfolio Youssef.A / Mineropaul</title>
   </head>
 
   <body>
@@ -17,40 +47,91 @@
       <a href="#home">Accueil</a>
       <a href="#about">À propos</a>
       <a href="#skills">Compétences</a>
-      <a href="#projects">Projets</a>
+      <a href="#mini-projects">Projets</a>
       <a href="#timeline">Timeline</a>
       <a href="#inspirations">Inspirations</a>
       <a href="#contact">Contact</a>
+      <a href="#fun">Fun</a>
     </nav>
 
-    <!-- Accueil -->
+    <!-- Section Accueil -->
     <section id="home" class="home">
       <div class="content">
         <div class="text">
           <h1>Bienvenue dans mon univers !</h1>
           <p>
-            Je m’appelle Youssef, un passionné de développement web, de jeux
-            vidéo, et de créativité.
+            Développeur web Junior, créateur de jeux en Lua et mini-graphiste.
           </p>
         </div>
         <img src="Ait ElFadil Youssef Logo.jpg" alt="Photo Youssef" />
       </div>
     </section>
 
-    <!-- À propos -->
+    <!-- Section À propos -->
     <section id="about" class="about">
-      <h2>À propos</h2>
-      <p>
-        Salut, je suis Youssef, un développeur en herbe avec une curiosité sans
-        fin. J’ai commencé par créer des vidéos sur YouTube, puis je me suis
-        aventuré dans la création de jeux sur Roblox Studio. Aujourd’hui, je me
-        concentre sur le développement web et je continue d’apprendre chaque
-        jour.
-      </p>
+      <h2>À propos de moi</h2>
+
+      <div class="intro">
+        <p>
+          Salut, je suis <strong>Youssef Ait Elfadil</strong>, un développeur
+          web, créateur de jeux et passionné par le monde de l'aviation et SCP.
+          Je te laisse découvrir mon univers à travers ce portfolio.
+        </p>
+      </div>
+
+      <div class="general-info">
+        <h3>Informations Générales</h3>
+        <ul>
+          <li><strong>Nom :</strong> Youssef Ait Elfadil</li>
+          <li><strong>Pseudo :</strong> Mineropaul</li>
+          <li><strong>Nationalité :</strong> Marocain</li>
+          <li><strong>Âge :</strong> ██</li>
+          <!-- Remplacer ██ par l'âge -->
+          <li>
+            <strong>Passion :</strong> Développeur web Junior, créateur de jeux
+            en Lua, et mini-graphiste.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Section Langues parlées -->
+      <div class="languages">
+        <h3>Langues Parlées</h3>
+        <ul>
+          <li>
+            <img src="morocco-flag.png" alt="Maroc" class="flag" />
+            <strong>Darija</strong>
+          </li>
+          <li>
+            <img src="ksa-flag.png" alt="Arabe" class="flag" />
+            <strong>Arabe</strong>
+          </li>
+          <li>
+            <img src="amazigh-flag.png" alt="Amazigh" class="flag" />
+            <strong>Amazigh</strong>
+          </li>
+          <li>
+            <img src="france-flag.png" alt="Français" class="flag" />
+            <strong>Français</strong>
+          </li>
+          <li>
+            <img src="uk-flag.png" alt="Anglais" class="flag" />
+            <strong>Anglais</strong>
+          </li>
+          <li>
+            <img src="spain-flag.png" alt="Espagnol" class="flag" />
+            <strong>Espagnol</strong>
+          </li>
+        </ul>
+      </div>
     </section>
 
-    <!-- Mes Compétences -->
-    <section id="competences" class="competences">
+    <br />
+    <br />
+    <br />
+
+    <!-- Section Compétences -->
+    <section id="skills" class="competences">
       <h2>Mes Compétences</h2>
       <div class="competence-container">
         <div class="competence-item">
@@ -80,23 +161,27 @@
       </div>
     </section>
 
-    <!-- Mes Mini Projets -->
-    <section class="mini-projects">
+    <!-- Section Mini Projets -->
+    <section id="mini-projects" class="mini-projects">
       <h2>Mes Mini Projets</h2>
       <div class="project-list">
         <div class="project-item">
           <img
-            src="icon1.png"
+            src="Azur Agency.jpg"
             alt="Petit Studio Développeur"
             class="project-icon"
           />
           <div class="project-info">
-            <h3>Petit Studio Développeur</h3>
-            <p>Collaboration avec des amis pour apprendre et créer ensemble.</p>
+            <h3>AZUR Agency</h3>
+            <p>Vente de services (Département Informatique)</p>
           </div>
         </div>
         <div class="project-item">
-          <img src="Roblox Studio logo.png" alt="Mini Jeux Roblox" class="project-icon" />
+          <img
+            src="Roblox Studio logo.png"
+            alt="Mini Jeux Roblox"
+            class="project-icon"
+          />
           <div class="project-info">
             <h3>Mini Jeux Roblox</h3>
             <p>Expérimentation avec Lua et Roblox Studio.</p>
@@ -105,52 +190,42 @@
       </div>
     </section>
 
-    <!-- Timeline -->
-    <section id="timeline">
+    <!-- Section Timeline -->
+    <section id="timeline" class="timeline">
       <h2>Timeline</h2>
       <div class="timeline-container">
         <div class="timeline-item">
           <h3>2020-2022</h3>
           <p>
-            Création de vidéos sur YouTube, exploration du montage vidéo et du
-            partage en ligne.
+            Je découvre le montage vidéo et je poste des vidéos sur YouTube.
           </p>
         </div>
         <div class="timeline-item">
           <h3>2021-2023</h3>
           <p>
-            Découverte de Roblox Studio et des bases de Lua. Début des premières
-            créations de jeux.
+            Je découvre Roblox Studio et les bases de Lua. Mes débuts en
+            création de jeux en Lua.
           </p>
         </div>
         <div class="timeline-item">
           <h3>2023-2024</h3>
-          <p>
-            Plongée dans le développement web avec des projets HTML, CSS, et
-            JavaScript.
-          </p>
+          <p>Je me concentre sur le développement web.</p>
         </div>
       </div>
     </section>
 
     <!-- Section Inspirations -->
     <section id="inspirations" class="inspirations">
-      <h2>Inspirations</h2>
-      <p>
-        Je puise mes inspirations dans de nombreux domaines, notamment la
-        science-fiction, les films d'aventure et les jeux vidéo. Je suis
-        particulièrement passionné par la création d'univers immersifs, la
-        narration interactive et l'innovation technologique. Ces éléments
-        nourrissent ma vision du développement web et du design.
-      </p>
+      <h2>Mes Inspirations</h2>
       <ul>
-        <li>Création d'univers immersifs</li>
-        <li>Exploration de nouvelles technologies</li>
-        <li>Passion pour les jeux vidéo et la culture geek</li>
+        <li>L'univers SCP.</li>
+        <li>Royal Moroccan Air Force (RMAF).</li>
+        <li>Histoire et géographie.</li>
+        <li>Apprendre de nouvelles choses.</li>
       </ul>
     </section>
 
-    <!-- Contact -->
+    <!-- Section Contact -->
     <section id="contact" class="contact">
       <h2>Contact</h2>
       <p>Si tu veux discuter ou collaborer, voici comment me trouver :</p>
@@ -163,24 +238,21 @@
       <p>Discord : mineropaul</p>
     </section>
 
-    <!-- Fun Section -->
+    <!-- Section Fun -->
     <section id="fun" class="fun">
       <h2>Pourquoi je suis incroyable ?</h2>
-      <p>Je suis curieux, toujours prêt à explorer de nouvelles idées.</p>
-      <p>
-        J’ai une passion pour l’apprentissage et le partage de mes expériences.
-      </p>
-      <p>Je mets du fun dans tout ce que je fais, même quand c’est sérieux !</p>
+      <p>Rien de spécial, peut-être...</p>
+      <p>Boo !!</p>
     </section>
 
     <!-- Footer -->
     <footer>
       <p>© 2025 Youssef - Tous droits réservés</p>
       <div class="social-links">
-        <a href="https://github.com/Youssef" target="_blank" title="GitHub">
-          <img src="GitHub logo.png " alt="GitHub" />
+        <a href="https://github.com/MINEROPAUL" target="_blank" title="GitHub">
+          <img src="GitHub logo.png" alt="GitHub" />
         </a>
-        <a href="https://twitter.com/Youssef" target="_blank" title="Twitter">
+        <a href="https://x.com/MINEROPAULL" target="_blank" title="Twitter">
           <img src="X logo.png" alt="Twitter" />
         </a>
         <a
@@ -190,8 +262,10 @@
         >
           <img src="Gmail logo.png" alt="Email" />
         </a>
+      </div>
     </footer>
-</div>
+
+    <!-- Lien vers les scripts -->
     <script src="scripts.js"></script>
   </body>
 </html>

@@ -1,85 +1,100 @@
-// Transition fluide pour le changement d'élément de la page (exemple pour une section)
+// ===============================
+// Transition fluide pour les liens
+// ===============================
+
 document.querySelectorAll("a").forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault(); // Empêche le comportement par défaut du lien
     const targetId = this.getAttribute("href").substring(1); // Récupère l'ID de la section cible
     const targetSection = document.getElementById(targetId);
 
-    // Défilement fluide vers la section cible
-    window.scrollTo({
-      top: targetSection.offsetTop - 100, // Décalage de 100px pour la navbar fixe
-      behavior: "smooth",
-    });
+    // Vérifie si la section cible existe
+    if (targetSection) {
+      // Défilement fluide vers la section cible
+      window.scrollTo({
+        top: targetSection.offsetTop - 100, // Décalage pour la navbar fixe
+        behavior: "smooth",
+      });
+    }
   });
 });
 
-// Fonction pour détecter les éléments visibles à l'écran
-function checkVisibility() {
-  // Détection des sections visibles
-  document.querySelectorAll("section").forEach((section) => {
-    const rect = section.getBoundingClientRect();
-    if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-      section.classList.add("visible");
-    }
-  });
+// ===============================
+// Fonction de détection de visibilité des éléments
+// ===============================
 
-  // Détection des éléments de la timeline visibles
-  document.querySelectorAll(".timeline li").forEach((item) => {
+function detectVisibility(selector, visibleClass = "visible") {
+  document.querySelectorAll(selector).forEach((item) => {
     const rect = item.getBoundingClientRect();
     if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-      item.classList.add("visible");
-    }
-  });
-
-  // Détection des éléments de compétences visibles
-  document.querySelectorAll(".skills li").forEach((item) => {
-    const rect = item.getBoundingClientRect();
-    if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-      item.classList.add("visible");
-    }
-  });
-
-  // Détection des éléments de projets visibles
-  document.querySelectorAll(".projects li").forEach((item) => {
-    const rect = item.getBoundingClientRect();
-    if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-      item.classList.add("visible");
+      item.classList.add(visibleClass);
+    } else {
+      item.classList.remove(visibleClass); // Optionnel, pour retirer la classe si elle n'est plus visible
     }
   });
 }
 
-// Vérifier la visibilité lors du défilement
-window.addEventListener("scroll", checkVisibility);
+// ===============================
+// Fonction de gestion du défilement
+// ===============================
 
-// Vérifier la visibilité au chargement de la page
-window.addEventListener("load", checkVisibility);
+function onScroll() {
+  detectVisibility("section"); // Détecte les sections visibles
+  detectVisibility(".timeline li"); // Détecte les éléments de la timeline
+  detectVisibility(".skills li"); // Détecte les compétences
+  detectVisibility(".projects li"); // Détecte les projets
+}
 
-// Effet de scroll pour la navbar (devenir transparente et flou)
-window.onscroll = function () {
-  let nav = document.querySelector("nav");
+// ===============================
+// Effet de défilement pour la navbar
+// ===============================
+
+function handleNavbarScroll() {
+  const nav = document.querySelector("nav");
   if (window.scrollY > 50) {
-    // Si l'utilisateur défile plus de 50px
-    nav.classList.add("scrolled");
+    nav.classList.add("scrolled"); // Ajoute la classe "scrolled" si on défile vers le bas
   } else {
-    nav.classList.remove("scrolled");
+    nav.classList.remove("scrolled"); // Retire la classe "scrolled" si on est en haut de la page
   }
+}
+
+// ===============================
+// Utilisation de l'IntersectionObserver
+// ===============================
+
+// Paramètres de l'observateur
+const observerOptions = {
+  threshold: 0.2, // Déclenche la visibilité quand 20% de l'élément est visible
 };
 
-// Observer les sections pour ajouter la classe "visible" lorsqu'elles deviennent visibles à l'écran
-const options = {
-  threshold: 0.2, // Déclenche la visibilité quand 20% de la section est visible
-};
-
-// Observer les sections à l'aide de l'IntersectionObserver
-const observer = new IntersectionObserver(function (entries, observer) {
+// Création de l'observateur pour chaque section
+const sectionObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
+      entry.target.classList.add("visible"); // Ajoute la classe "visible" si la section est visible
+    } else {
+      entry.target.classList.remove("visible"); // Retire la classe "visible" si la section n'est plus visible
     }
   });
-}, options);
+}, observerOptions);
 
-// Observer chaque section
+// Observer chaque section de la page
 document.querySelectorAll("section").forEach((section) => {
-  observer.observe(section);
+  sectionObserver.observe(section); // Surveille chaque section pour la visibilité
+});
+
+// ===============================
+// Gestion des événements de défilement et chargement
+// ===============================
+
+// Détecte le défilement pour appliquer les effets de visibilité et de navbar
+window.addEventListener("scroll", () => {
+  onScroll();
+  handleNavbarScroll();
+});
+
+// Vérification initiale au chargement de la page
+window.addEventListener("load", () => {
+  onScroll();
+  handleNavbarScroll();
 });
