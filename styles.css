@@ -516,3 +516,61 @@ button.theme-toggle {
 button.theme-toggle:hover {
   transform: scale(1.1);
 }
+
+/* Mode sombre */
+.dark-mode {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6 {
+  color: #f1f1f1;
+}
+
+.dark-mode p {
+  color: #ccc;
+}
+
+.dark-mode a {
+  color: #80d4ff;
+}
+
+.dark-mode a:hover {
+  color: #ddd;
+}
+
+.dark-mode header,
+.dark-mode footer {
+  background-color: #222;
+  color: white;
+}
+
+.dark-mode nav {
+  background-color: #111;
+}
+
+.dark-mode .about,
+.dark-mode .competence-item,
+.dark-mode .project-item {
+  background-color: #333;
+  color: #ddd;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .timeline-container {
+  border-left: 4px solid #80d4ff;
+}
+
+.dark-mode .timeline-item {
+  background-color: #222;
+  color: #ccc;
+}
+
+.dark-mode .timeline-item::before {
+  background-color: #80d4ff;
+}
