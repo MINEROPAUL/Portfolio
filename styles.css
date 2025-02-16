@@ -481,3 +481,38 @@ section {
 }
 
 /*---------------------------------------------*/
+
+/* Thème clair (par défaut) */
+body {
+  background-color: #fff;
+  color: #000;
+}
+
+.navbar {
+  background-color: #f0f0f0;
+}
+
+/* Thème sombre */
+body.dark-theme {
+  background-color: #121212;
+  color: #fff;
+}
+
+body.dark-theme .navbar {
+  background-color: #333;
+}
+
+button.theme-toggle {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  font-size: 1.5em;
+  cursor: pointer;
+  margin-left: auto;
+  display: block;
+}
+
+/* Ajouter un effet lors du passage du curseur sur le bouton */
+button.theme-toggle:hover {
+  transform: scale(1.1);
+}
