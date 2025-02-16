@@ -98,3 +98,34 @@ window.addEventListener("load", () => {
   onScroll();
   handleNavbarScroll();
 });
+
+// ===============================
+// Mode sombre & Mode claire
+// ===============================
+
+// Récupérer le bouton et le corps de la page
+const themeToggleButton = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Vérifier le thème actuel dans le localStorage
+if (localStorage.getItem('theme') === 'dark') {
+  body.classList.add('dark-theme');
+  themeToggleButton.textContent = '🌕'; // Icône pour le mode clair
+} else {
+  body.classList.remove('dark-theme');
+  themeToggleButton.textContent = '🌙'; // Icône pour le mode sombre
+}
+
+// Ajouter un événement pour basculer entre les modes
+themeToggleButton.addEventListener('click', () => {
+  body.classList.toggle('dark-theme');
+  
+  // Sauvegarder le choix de l'utilisateur dans le localStorage
+  if (body.classList.contains('dark-theme')) {
+    localStorage.setItem('theme', 'dark');
+    themeToggleButton.textContent = '🌕'; // Icône pour le mode clair
+  } else {
+    localStorage.setItem('theme', 'light');
+    themeToggleButton.textContent = '🌙'; // Icône pour le mode sombre
+  }
+});
